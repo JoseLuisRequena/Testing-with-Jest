@@ -1,4 +1,3 @@
-
 class Room {
 
     constructor({name, bookings, price, discount}){
@@ -89,6 +88,5 @@ function arrayDate(startDate, endDate){
     }
     return ArrayDates;
 }
-
 
 module.exports = { Room, Booking, totalOccupancyPercentage };
