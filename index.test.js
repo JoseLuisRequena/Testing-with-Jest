@@ -1,6 +1,4 @@
-
 const { Room, Booking, totalOccupancyPercentage } = require('./index')
-
 
 describe('isOccupied', () => {
     describe('no bookings', () => {
@@ -21,7 +19,7 @@ describe('isOccupied', () => {
             const booking3 = new Booking({name: 'Fred', room: newRoom, checkIn: new Date ('2022-8-10'), checkOut: new Date ('2022-8-15')});
             newRoom.bookings = [booking1, booking2, booking3];
             expect(newRoom.isOccupied(new Date ('2022-8-2'))).toBe('Fred Smith');
-        });
+            });
 
         test('booking date (with .toBe("false"))', () => {
             const roomTemplate = {name: 'Ocean view suite', price: 35000, discount: 0}
