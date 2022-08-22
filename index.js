@@ -71,11 +71,23 @@ function totalOccupancyPercentage(rooms, startDate, endDate) {
 } 
 
 function availableRooms(rooms, startDate, endDate){
-    
-    return ;
-    // returns 
-    //(all rooms in the array that are not occupied for the entire duration)
-    //(todas las habitaciones de la matriz que no están ocupadas durante toda la duración)
+    if(rooms.length){
+        const ArrayDatesSerch = arrayDate(startDate, endDate);
+        let unoccupiedRooms = [];
+        
+        for(let room of rooms){
+            let daysOccupancy = [];
+            for(let day of ArrayDatesSerch){
+                room.isOccupied(day) ? daysOccupancy.push(day) : 0;
+            }
+            
+            if(!daysOccupancy.length){
+                unoccupiedRooms.push(room.name);
+            }
+        }
+        return unoccupiedRooms;
+    } 
+    return false;
 }
 
 //Calcular el rango de días a comprobar
@@ -89,4 +101,4 @@ function arrayDate(startDate, endDate){
     return ArrayDates;
 }
 
-module.exports = { Room, Booking, totalOccupancyPercentage };
+module.exports = { Room, Booking, totalOccupancyPercentage, availableRooms };
