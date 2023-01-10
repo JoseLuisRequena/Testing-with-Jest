@@ -19,7 +19,7 @@ class Room {
     }
 
     occupancyPercentage(startDate, endDate){
-        //poblar un array con los dias seleccionados
+        //poblar un array con los dias seleccionados que coincidan con la reserva
         if (this.bookings.length){
             const ArrayDatesSerch = arrayDate (startDate, endDate);
             let daysOccupancy = [];
